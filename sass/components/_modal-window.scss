@@ -1,0 +1,248 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  min-width: 450px;
+  max-height: 609px;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  padding: 40px 40px;
+
+  @include desktop {
+    min-width: 528px;
+    min-height: 581px;
+  }
+}
+
+//modal button
+
+.modal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  background: var(--primary-background-color);
+  border: none;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  cursor: pointer;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button:hover,
+.modal-button:focus svg {
+  fill: var(--accent-text-color);
+}
+
+.icon-modal {
+  height: 100%;
+}
+
+.modal-title {
+  color: var(--title-text-color);
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  margin-bottom: 12px;
+
+  @include desktop {
+    line-height: 1.15;
+  }
+}
+
+//modal form
+
+.form__label {
+  display: block;
+}
+
+.form-wrap__name {
+  width: 12px;
+  height: 12px;
+}
+
+.form-wrap__telephone {
+  width: 13px;
+  height: 13px;
+}
+
+.form-wrap__email {
+  width: 15px;
+  height: 12px;
+}
+
+.form-wrap {
+  position: relative;
+  margin-bottom: 10px;
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.form__input {
+  width: 370px;
+  height: 40px;
+  padding: 0 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus {
+    border: 1px solid var(--accent-text-color);
+  }
+
+  @include desktop {
+    width: 448px;
+  }
+}
+
+.form__input:focus + .form-wrap__svg {
+  fill: var(--accent-text-color);
+}
+
+.form__textarea {
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  width: 370px;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &:focus {
+    border: 1px solid var(--accent-text-color);
+  }
+
+  @include desktop {
+    width: 448px;
+  }
+}
+
+.accept {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.accept__link {
+  color: var(--accent-text-color);
+  display: block;
+
+  text-decoration: none;
+}
+
+.accept__span {
+  font-size: 12px;
+  line-height: 1.16;
+
+  margin-left: 8px;
+
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.71;
+
+    display: flex;
+  }
+}
+
+.accept__label {
+  display: flex;
+  align-items: center;
+}
+
+.form__label__description {
+  font-size: 12px;
+  line-height: 1.16;
+
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.accept__input:checked + .accept__label .accept__checkbox {
+  background-color: var(--accent-text-color);
+  border: 2px solid var(--accent-text-color);
+}
+.accept__checkbox {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 3px;
+  margin-right: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 250ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accept__svg {
+  width: 11px;
+  height: 8px;
+}
+
+.accept-line {
+  position: relative;
+
+  &::after {
+    position: absolute;
+
+    content: '';
+    width: 100%;
+    height: 1px;
+    top: 17px;
+    background: var(--accent-text-color);
+  }
+}
+
+.form__button {
+  margin: 0 auto;
+  display: block;
+}

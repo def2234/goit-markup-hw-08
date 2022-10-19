@@ -1,0 +1,43 @@
+.list-partners {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: center;
+  row-gap: 30px;
+  column-gap: 30px;
+
+  @include desktop {
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
+    flex-wrap: nowrap;
+    row-gap: 0;
+    column-gap: 0;
+  }
+}
+
+.list-partners__links {
+  fill: var(--icon-color);
+  display: block;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+
+  transition: fill 250ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-text-color);
+    border: 1px solid var(--accent-text-color);
+  }
+}
+
+.icon-partners {
+  width: 106px;
+  height: 60px;
+}
