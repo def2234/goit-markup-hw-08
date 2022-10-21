@@ -6,9 +6,14 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  min-width: 480px;
+  min-width: 320px;
   min-height: 400px;
   margin: 0 auto;
+
+  @include mobile {
+    min-width: 480px;
+    min-height: 400px;
+  }
 
   @include retina {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -55,11 +60,13 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  width: 360px;
-
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
+
+  @include mobile {
+    width: 360px;
+  }
 
   @include desktop {
     font-size: 44px;

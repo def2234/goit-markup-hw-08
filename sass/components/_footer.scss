@@ -40,9 +40,9 @@
   @include tablet {
     margin: 0 auto;
   }
-
   @include desktop {
-    margin: 0 0 0 93px;
+    margin: 0;
+    margin-left: auto;
   }
 }
 
@@ -53,7 +53,7 @@
 }
 
 .form-subscribe__input {
-  min-width: 450px;
+  min-width: 290px;
   min-height: 50px;
 
   padding: 0 15px;
@@ -75,6 +75,10 @@
     font-size: 16px;
     line-height: 1.25;
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  @include mobile {
+    min-width: 450px;
   }
 
   @include desktop {
@@ -108,8 +112,9 @@
 }
 
 .address-wrapper {
+  margin-bottom: 60px;
   @include tablet {
-    margin: 0 165px 0 76px;
+    margin: 0 165px 60px 76px;
   }
 
   @include desktop {
@@ -166,10 +171,16 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
-  margin: 60px 0 20px 0;
+  margin-bottom: 20px;
 
   @include desktop {
     margin-bottom: 20px;
+  }
+}
+
+.social-container {
+  @include max-mobile {
+    margin-bottom: 60px;
   }
 }
 
