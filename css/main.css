@@ -223,9 +223,14 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100vw;
-  height: 100vh;
-  padding: 48px 15px 48px 40px;
+  padding: 48px 40px;
   background-color: var(--primary-background-color);
   z-index: 999;
   -webkit-transform: translateX(100%);
@@ -248,9 +253,16 @@ body {
 }
 
 .mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 100%;
+     -moz-column-gap: 100%;
+          column-gap: 100%;
   padding: 0;
   margin: 0;
-  margin-bottom: 302px;
   list-style: none;
 }
 .mobile-menu .mobile-menu__link--color {
@@ -264,7 +276,6 @@ body {
   font-size: 40px;
   line-height: 1.17;
   letter-spacing: 0.02em;
-  padding-bottom: 32px;
   text-decoration: none;
   color: var(--title-text-color);
   text-decoration: none;
@@ -357,14 +368,20 @@ body {
 .auth-list__mobile {
   display: block;
   margin-left: 0;
+  -webkit-column-gap: 100%;
+     -moz-column-gap: 100%;
+          column-gap: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .auth-list__item {
   padding: 0;
   margin-left: 0;
-}
-.auth-list__item:not(:last-child) {
-  margin-bottom: 32px;
 }
 @media screen and (min-width: 768px) {
   .auth-list__item {
@@ -391,7 +408,7 @@ body {
 .auth-list__link {
   color: var(--accent-text-color);
   font-weight: 500;
-  font-size: 34px;
+  font-size: 27px;
   line-height: 1.17;
   letter-spacing: 0.02em;
   display: block;
@@ -401,6 +418,11 @@ body {
 }
 .auth-list__link:hover .auth-list-icon {
   fill: var(--accent-text-color);
+}
+@media screen and (min-width: 480px) {
+  .auth-list__link {
+    font-size: 34px;
+  }
 }
 @media screen and (min-width: 768px) {
   .auth-list__link {
@@ -457,13 +479,20 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 0;
-  margin-top: 64px;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.mobile-social__item:not(:last-child) {
-  margin-right: 20px;
-}
 .mobile-social__item:not(:last-child):after {
   content: "";
   position: absolute;
